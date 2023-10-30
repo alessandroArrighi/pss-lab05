@@ -18,5 +18,21 @@ public class Exam {
         this.room = room;
     }
 
-    
+    public int getId() {
+        return this.id;
+    }
+
+    public int getMaxStudent() {
+        return this.maxStudents;
+    }
+
+    public int getNumRegistredStudents() {
+        return this.registeredStudents;
+    }
+
+    public void changeNumRegistredStudent(final int registeredStudents) {
+        this.registeredStudents = registeredStudents;
+    }
+
+
 }
