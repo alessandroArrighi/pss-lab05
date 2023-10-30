@@ -8,4 +8,15 @@ public class Exam {
     private Professor professor;
     private ExamRoom room;
     private Student[] students;
+
+    public Exam(final int id, final int maxStudents, final String courseName, 
+    final Professor professor, final ExamRoom room) {
+        this.id = id;
+        this.maxStudents = maxStudents;
+        this.courseName = courseName;
+        this.professor = professor;
+        this.room = room;
+    }
+
+    
 }
