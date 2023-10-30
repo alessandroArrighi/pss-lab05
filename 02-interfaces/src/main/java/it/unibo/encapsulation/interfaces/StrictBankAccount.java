@@ -14,10 +14,17 @@ public class StrictBankAccount implements BankAccount {
     }
 
     private void makeTransaction(final int id, final double amount) {
-        if(this.id == id && !(amount > this.balance)) {
+        if(this.id == id) {
             this.transactions++;
             this.balance += amount;
         }
+    }
+
+    private boolean withdrawCheck(double amount) {
+        if(amount > this.balance) {
+            return false;
+        }
+        return true;
     }
 
     public double getBalance() {
@@ -33,7 +40,9 @@ public class StrictBankAccount implements BankAccount {
     }
 
     public void withdraw(final int id, final double amount) {
-        makeTransaction(id, - (amount));
+        if(withdrawCheck(amount)) {
+            makeTransaction(id, - (amount));
+        }
     }
 
     public void depositFromATM(final int id, final double amount) {
@@ -41,14 +50,12 @@ public class StrictBankAccount implements BankAccount {
     }
 
     public void withdrawFromATM(final int id, final double amount) {
-        makeTransaction(id, - (amount + TRANSACTION_FEE));
+        if(withdrawCheck(amount)) {
+            makeTransaction(id, - (amount + TRANSACTION_FEE));
+        }
     }
 
     public void chargeManagementFees(final int id) {
-        /*
-         * Riduce il bilancio del conto di un ammontare pari alle spese di gestione
-         */
-
         if(this.id == id) {
             this.balance -= ACCOUNT_MANAGEMENT_FEE;
         }
