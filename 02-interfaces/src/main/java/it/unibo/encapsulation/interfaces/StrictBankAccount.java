@@ -1,7 +1,8 @@
 package it.unibo.encapsulation.interfaces;
 
 public class StrictBankAccount implements BankAccount {
-    private final static double ATM_TRANSACTION_FEE = 5; // commissione con ATM
+    private final static double TRANSACTION_FEE = 0.1; // commissione per ogni transazione
+    private final static double ACCOUNT_MANAGEMENT_FEE = 5;
     
     private double balance; // ammontare del conto
     private int transactions; // numero delle operazioni
@@ -36,11 +37,11 @@ public class StrictBankAccount implements BankAccount {
     }
 
     public void depositFromATM(final int id, final double amount) {
-        makeTransaction(id, (amount - ATM_TRANSACTION_FEE));
+        makeTransaction(id, (amount - TRANSACTION_FEE));
     }
 
     public void withdrawFromATM(final int id, final double amount) {
-        makeTransaction(id, - (amount + ATM_TRANSACTION_FEE));
+        makeTransaction(id, - (amount + TRANSACTION_FEE));
     }
 
     public void chargeManagementFees(final int id) {
