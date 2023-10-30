@@ -13,6 +13,8 @@ public class Professor implements User {
     }
 
     public void replaceCourse(String course, int index) {
-        
+        if(this.courses.length > index) {
+            this.courses[index] = course;
+        }
     }
 }
