@@ -1,5 +1,7 @@
 package it.unibo.composition;
 
+import java.util.Arrays;
+
 public class Exam {
     private int id;
     private int maxStudents;
@@ -17,6 +19,18 @@ public class Exam {
         this.professor = professor;
         this.room = room;
         this.students = new Student[maxStudents];
+    }
+
+    @Override
+    public String toString() {
+        return "Exam [" +
+        "id: " + this.id +
+        "registred students: " + this.registeredStudents +
+        "course name: " + this.courseName +
+        "professor: " + this.professor +
+        "exam room: " + this.room +
+        "students: " + Arrays.toString(this.students) + 
+        "]";
     }
 
     public int getId() {
@@ -52,10 +66,4 @@ public class Exam {
             this.students[this.registeredStudents] = student;
         }
     }
-
-    private void changeNumRegistredStudent(final int registeredStudents) {
-        this.registeredStudents = registeredStudents;
-    }
-
-    
 }
