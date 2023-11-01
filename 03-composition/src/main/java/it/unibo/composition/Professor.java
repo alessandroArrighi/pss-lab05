@@ -7,7 +7,8 @@ public class Professor implements User {
     private String password;
     private String[] courses;
 
-    public Professor(final int id, final String password) {
+    public Professor(final int id, final String name, 
+    final String surname, final String password) {
         this.id = id;
         this.password = password;
     }

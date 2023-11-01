@@ -57,13 +57,14 @@ public class Exam {
         return this.room;
     }
 
-    public Student[] getStudents() {
-        return this.students;
+    public String getStudents() {
+        return Arrays.toString(this.students);
     }
 
     public void registerStudent(Student student) {
-        if(this.students.length < this.maxStudents) {
+        if(this.registeredStudents < this.maxStudents) {
             this.students[this.registeredStudents] = student;
+            this.registeredStudents++;
         }
     }
 }
