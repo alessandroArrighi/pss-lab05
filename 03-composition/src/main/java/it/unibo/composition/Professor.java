@@ -46,6 +46,18 @@ public class Professor implements User {
         return toString();
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setCourses(String[] courses) {
+        this.courses = courses;
+    }
+
     public void replaceCourse(String course, int index) {
         if(this.courses.length > index) {
             this.courses[index] = course;
