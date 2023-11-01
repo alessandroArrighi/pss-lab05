@@ -31,6 +31,22 @@ public class Exam {
         return this.registeredStudents;
     }
 
+    public String getCourseName() {
+        return this.courseName;
+    }
+
+    public Professor getProfessor() {
+        return this.professor;
+    }
+
+    public ExamRoom getRoom() {
+        return this.room;
+    }
+
+    public Student[] getStudents() {
+        return this.students;
+    }
+
     private void changeNumRegistredStudent(final int registeredStudents) {
         this.registeredStudents = registeredStudents;
     }
