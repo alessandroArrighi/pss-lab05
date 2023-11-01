@@ -22,12 +22,24 @@ public class Professor implements User {
         + "]";
     }
 
+    public int getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
     public String getUsername() {
         return this.surname;
     }
 
     public String getPassword() {
         return this.password;
+    }
+
+    public String[] getCourses() {
+        return this.courses;
     }
 
     public String getDescription() {

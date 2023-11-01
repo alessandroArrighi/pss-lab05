@@ -16,6 +16,7 @@ public class Exam {
         this.courseName = courseName;
         this.professor = professor;
         this.room = room;
+        this.students = new Student[maxStudents];
     }
 
     public int getId() {
@@ -30,9 +31,9 @@ public class Exam {
         return this.registeredStudents;
     }
 
-    public void changeNumRegistredStudent(final int registeredStudents) {
+    private void changeNumRegistredStudent(final int registeredStudents) {
         this.registeredStudents = registeredStudents;
     }
 
-
+    
 }
