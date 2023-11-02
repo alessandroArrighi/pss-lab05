@@ -5,12 +5,12 @@ import it.unibo.shapes.api.Polygon;
 public class Rectangle implements Polygon {
     private final static int NUMBER_OF_SIDES = 4;
 
-    private double lognSide;
-    private double shortSide;
+    private double base;
+    private double height;
 
-    public Rectangle(final double lognSide, final double shortSide) {
-        this.lognSide = lognSide;
-        this.shortSide = shortSide;
+    public Rectangle(final double base, final double height) {
+        this.base = base;
+        this.height = height;
     }
 
     public int getEdgeCount() {
@@ -18,10 +18,10 @@ public class Rectangle implements Polygon {
     }
 
     public double getArea() {
-        return this.lognSide * this.shortSide;
+        return this.base * this.height;
     }
 
     public double getPerimeter() {
-        return (2 * this.lognSide) + (2 * this.shortSide);
+        return (2 * this.base) + (2 * this.height);
     }
 }
